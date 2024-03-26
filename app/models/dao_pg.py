@@ -38,7 +38,7 @@ class DataBase():
         self.session.close()
 
 
-    def set_engine(self):
+    def _set_engine(self):
 
         try:
 
@@ -54,7 +54,7 @@ class DataBase():
             return None
         
     
-    def set_session(self):
+    def _set_session(self):
 
         if self._engine:
 
@@ -85,6 +85,7 @@ class Lead(Base):
     email = Column(String(100))
     url_lead = Column(String(250))
     cellphone = Column(String(100))
+
 
 class Campaign(Base):
 
