@@ -10,6 +10,15 @@ origins = [
     "http://0.0.0.0:3000",
 ]
 
+#--------DB--------#
+DB_PG_HOST = os.environ.get("DB_PG_HOST")
+DB_PG_PORT = os.environ.get("DB_PG_PORT")
+DB_PG_DATABASE = os.environ.get("DB_PG_DATABASE")
+DB_PG_USERNAME = os.environ.get("DB_PG_USERNAME")
+DB_PG_PASSWORD = os.environ.get("DB_PG_PASSWORD")
+DB_PG_SCHEMA = os.environ.get("DB_PG_SCHEMA")
+#--------DB--------#
+
 #--------personal info--------#
 EMAIL_LOGIN_LINKEDIN = os.environ.get("EMAIL_LOGIN_LINKEDIN")
 PWD_LOGIN_LINKEDIN = os.environ.get("PWD_LOGIN_LINKEDIN")
@@ -41,3 +50,4 @@ CSS_SELECTOR_NAME_PROFILE = 'mn-connection-card__name t-16 t-black t-bold'
 CSS_SELECTOR_LI_PROFILES = 'mn-connection-card artdeco-list'
 CSS_SELECTOR_DIV_PROFILES = 'div.scaffold-finite-scroll__content'
 #--------css selector--------#
+
