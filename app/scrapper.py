@@ -140,7 +140,3 @@ def send_menssage_for_list_conections(driver, url, menssage):
 
         click_element_by_xpath(driver, parameters.XPATH_CLOSE_MENSSAGE_BOX)
         
-
-with DataBase() as session:
-
-    session.add(Lead(name='teste', email='teste', url_lead='teste', cellphone='teste'))

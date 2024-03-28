@@ -16,8 +16,8 @@ class DataBase():
     def __init__(self, user=DB_PG_USERNAME, password=DB_PG_PASSWORD, host=DB_PG_HOST, port=DB_PG_PORT, name_db=DB_PG_DATABASE):
 
         self._url = f"postgresql://{user}:{password}@{host}:{port}/{name_db}"
-        self._engine = self.set_engine()
-        self._Session = self.set_session()
+        self._engine = self._set_engine()
+        self._Session = self._set_session()
 
 
     def __enter__(self):
