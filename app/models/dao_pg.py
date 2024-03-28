@@ -113,6 +113,7 @@ class Task(Base):
     name_task = Column(String(255))
 
     def __repr__(self):
+        
         return f"id_task = {self.id_task}, name_task = {self.name_task}"
 
 
@@ -130,6 +131,7 @@ class CampaignTask(Base):
     task = relationship("Task")
 
     def __repr__(self):
+
         return f"id_campaign_task = {self.id_campaign_task}, id_campaign = {self.id_campaign}, id_task = {self.id_task}, order_number = {self.order_number}"
 
 
@@ -145,4 +147,5 @@ class LeadsCampaign(Base):
     campaign = relationship("Campaign")
 
     def __repr__(self):
+
         return f"lead_id = {self.lead_id}, campaign_id = {self.campaign_id}"
