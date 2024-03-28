@@ -86,6 +86,9 @@ class Lead(Base):
     url_lead = Column(String(250))
     cellphone = Column(String(100))
 
+    def __repr__(self):
+        return f"lead_id={self.lead_id}, name={self.name}, email={self.email}, url_lead={self.url_lead}, cellphone={self.cellphone}"
+
 
 class Campaign(Base):
 
@@ -95,6 +98,9 @@ class Campaign(Base):
     id_campaign = Column(Integer, primary_key=True)
     name_campaign = Column(String(255))
 
+    def __repr__(self):
+        return f"id_campaign={self.id_campaign}, name_campaign={self.name_campaign}"
+
 
 class Task(Base):   
 
@@ -103,6 +109,9 @@ class Task(Base):
 
     id_task = Column(Integer, primary_key=True)
     name_task = Column(String(255))
+
+    def __repr__(self):
+        return f"id_task={self.id_task}, name_task={self.name_task}"
 
 
 class CampaignTask(Base):    
@@ -118,6 +127,9 @@ class CampaignTask(Base):
     campaign = relationship("Campaign")
     task = relationship("Task")
 
+    def __repr__(self):
+        return f"id_campaign_task={self.id_campaign_task}, id_campaign={self.id_campaign}, id_task={self.id_task}, order_number={self.order_number}"
+
 
 class LeadsCampaign(Base):
 
@@ -130,3 +142,5 @@ class LeadsCampaign(Base):
     lead = relationship("Lead")
     campaign = relationship("Campaign")
 
+    def __repr__(self):
+        return f"lead_id={self.lead_id}, campaign_id={self.campaign_id}"
