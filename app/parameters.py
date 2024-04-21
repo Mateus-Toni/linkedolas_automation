@@ -19,11 +19,6 @@ DB_PG_PASSWORD = os.environ.get("DB_PG_PASSWORD")
 DB_PG_SCHEMA = os.environ.get("DB_PG_SCHEMA")
 #--------DB--------#
 
-#--------personal info--------#
-EMAIL_LOGIN_LINKEDIN = os.environ.get("EMAIL_LOGIN_LINKEDIN")
-PWD_LOGIN_LINKEDIN = os.environ.get("PWD_LOGIN_LINKEDIN")
-#--------personal info--------#
-
 #--------url--------#
 URL_LOGIN_LINKEDIN = 'https://www.linkedin.com/login/'
 URL_HOME_LINKEDIN = 'https://www.linkedin.com'

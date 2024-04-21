@@ -1,19 +1,15 @@
 import logging
 
-from fastapi import FastAPI
+from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 from app import parameters
+from app.routes import user
 
-# uvicorn app.app:app --host 0.0.0.0 --port 8000 --reload / python -m ?
+# uvicorn app.app:app --host 0.0.0.0 --port 5000 --reload
 
-if parameters.APP_MODE_OPTIONS['dev']:
-
-    logging.basicConfig(level=logging.DEBUG)
-
-else:
-
-    logging.basicConfig(level=logging.WARNING)
+logging.basicConfig(level=logging.WARNING)
 
 app = FastAPI()
 
@@ -25,4 +21,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router()
+@app.get("/", tags=["Health Check"])
+def healthcheck():
+    
+    return JSONResponse(
+        content={'msg': 'success'},
+        status_code=status.HTTP_200_OK
+    )
+
+app.include_router(user.router)
